@@ -1,10 +1,10 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -18,12 +18,9 @@ func hello(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 }
 
 func main() {
-	port := flag.String("port", "8080", "listening port")
-	flag.Parse()
-
 	r := httprouter.New()
 	r.GET("/", index)
 	r.GET("/hello/:name", hello)
 
-	log.Fatal(http.ListenAndServe(":"+*port, r))
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), r))
 }

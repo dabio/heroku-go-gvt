@@ -1,0 +1,6 @@
+{
+    "rootPath": "github.com/dabio/heroku-go-gvt",
+    "heroku": {
+        "install": ["."],
+        "goVersion": "go1.7"
+}
