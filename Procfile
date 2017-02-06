@@ -1,1 +1,1 @@
-web: web
+web: heroku-go-gvt
